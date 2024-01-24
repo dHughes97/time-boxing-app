@@ -1,0 +1,152 @@
+body { 
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Space between header/main content and footer */
+    align-items: center; /* Center children horizontally */
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFBF5;
+    color: #363062;
+}
+
+#root {
+    /* width: 80%; Example width, adjust as needed */
+    /* max-width: 1200px; */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
+    height: 100vh;
+    width: 100vw;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Adjust the ratio as needed */
+    /* grid-template-rows: auto 1fr 1fr; */
+    height: 100vh;
+}
+ 
+.heading{
+    height: 4rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+      
+
+.iTasks, .b-dump, .h-Sched {
+    margin: .4rem;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+}
+
+.iTasks {
+    background-color: #E6BAA3;
+    border: 3px solid black;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    text-align: center;
+    height: 15em;
+    width: 20em;
+}
+
+.b-dump {
+    background-color: #363062;
+    border: 3px solid black;
+    height: 25em;
+    width: 20em;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+
+.b-text {
+    background-color: #363062;
+    border: 3px solid black;
+    color: white;
+    border-radius: 17px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    height: 20rem;
+    width: 100%;
+}
+
+.h-Sched{
+    background-color: #86A789;
+    border: 3px solid black;
+    grid-column: 2 / 2;
+    grid-row: 1 / 4;
+    height: 65vh;
+    width: 20rem;
+    margin-top: 7rem;
+}
+
+.sched-Table, th, td{
+    outline: 2px solid black;
+    border-radius: 10px;
+}
+
+.sched-Table {
+    outline-offset: .5rem;
+    position: relative;
+    margin: .6rem;
+    left:2rem;
+}
+
+th, td {
+    padding-left:.4rem;
+    padding-right: 2rem;
+}
+.i-list-item {
+    list-style: none;
+}
+
+
+
+
+/* Footer */
+.copyright{
+    width: 100%; /* Full width of the page */
+    text-align: center;
+}
+
+
+@media (max-width: 425px) {
+    .app{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        overflow-y: auto;
+    }
+
+    .heading{
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .iTasks , .b-dump , .h-Sched {
+        width: 80%;
+    }
+
+    .iTasks {
+        grid-column: 1; 
+        grid-row: 2;    /*Put iTasks below heading*/
+    }
+
+    .b-dump {
+        grid-column: 1;
+        grid-row: 3;
+        
+    }
+
+    .h-Sched {
+        grid-column: 1;
+        grid-row: 4;
+        margin-top: 0;
+    }
+}
